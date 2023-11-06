@@ -60,8 +60,25 @@ SmartCity SmartVienna {
 						Sensor Co2Detector1(type=AIRQUALITY),
 						Sensor Co2Detector2(type=AIRQUALITY)
 					]
-				}
-				,
+				},
+				EnvironmentalComponent GEWienerLinienSBahn {
+					environmentalComponentLocation : lat=16.0738, long=12.0472
+					environmentalComponentParameter cocontent(unit="mmg/m3", type=AIRQUALITY){
+						goalValue : GoalValue(value="8.75", type=FLOAT)
+							basedOn -> Basis {
+								description "Optimal value for CO2 content in the air"
+								principleType POLICY
+								source "UN"
+							}
+						dataSource: GEWienerLinienSBahn
+						observedValue {
+							value : "8.75" 
+							type: FLOAT 
+							aggregatorType : AVG
+							aggregatedTime : "2023-09-12T 11:30:00.000+0200"
+						}
+					}
+				},
 				TransportationComponent GEWienerLinienBusDepartment {
 					transportComponentLocation : lat=22.033, long=12.032
 					transportComponentParameter TransportEnergyConsumption(unit="Watts", type=ENERGY){
@@ -185,7 +202,7 @@ SmartCity SmartVienna {
 					transportationComponentSub [STWienerLinienUbahn, STWienerLinienStrassenbahn, STTrafficLights]
 				},
 				TransportationComponent STWienerLinienStrassenbahn {
-					transportationComponentSuper STTrafficLights // <-- Scoping for Infrastructure Component isPartOf Link
+					transportationComponentSuper STTrafficLights
 					transportComponentLocation: lat=16.0738, long=12.0472
 					transportComponentParameter energyConsumed(unit="Watts", type=ENERGY){
 						goalValue : GoalValue(value="50", type=INTEGER)
@@ -198,7 +215,7 @@ SmartCity SmartVienna {
 					}					
 				},
 				TransportationComponent STWienerLinienUbahn {
-					transportationComponentSuper STWienerLinien // <-- Scoping for Infrastructure Component isPartOf Link
+					transportationComponentSuper STWienerLinien
 					transportComponentLocation: lat=16.0738, long=12.0472
 					transportComponentParameter energyConsumed(unit="Watts", type=ENERGY){
 						goalValue : GoalValue(value="50", type=INTEGER)
@@ -211,7 +228,7 @@ SmartCity SmartVienna {
 					} 
 				},
 				EnvironmentalComponent STTrafficLights {
-					environmentalComponentSuper STWienerLinien // <-- Scoping for Infrastructure Component isPartOf Link
+					environmentalComponentSuper STWienerLinien
 					environmentalComponentLocation : lat=16.0738, long=12.0472
 					environmentalComponentParameter carsPerMinute (unit="cars/min", type=NAVIGATION){
 						goalValue : GoalValue(value="50", type=INTEGER)

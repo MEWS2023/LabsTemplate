@@ -60,8 +60,25 @@ SmartCity SmartVienna {
 						Sensor Co2Detector1(type=AIRQUALITY),
 						Sensor Co2Detector2(type=AIRQUALITY)
 					]
-				}
-				,
+				},
+				EnvironmentalComponent GEWienerLinienSBahn {
+					environmentalComponentLocation : lat=16.0738, long=12.0472
+					environmentalComponentParameter cocontent(unit="mmg/m3", type=AIRQUALITY){
+						goalValue : GoalValue(value="8.75", type=FLOAT)
+							basedOn -> Basis {
+								description "Optimal value for CO2 content in the air"
+								principleType POLICY
+								source "UN"
+							}
+						dataSource: GEWienerLinienSBahn
+						observedValue {
+							value : "8.75" 
+							type: FLOAT 
+							aggregatorType : AVG
+							aggregatedTime : "2023-09-12T 11:30:00.000+0200"
+						}
+					}
+				},
 				TransportationComponent GEWienerLinienBusDepartment {
 					transportComponentLocation : lat=22.033, long=12.032
 					transportComponentParameter TransportEnergyConsumption(unit="Watts", type=ENERGY){
@@ -153,11 +170,11 @@ SmartCity SmartVienna {
 				}
 			]
 			indicators [
-				COCONTENTmeasurement_indicator(status=GOOD, parameter=CoContent){   // <-- Scoping for KPIMeasurementDevice_parameter
+				COCONTENTmeasurement_indicator(status=GOOD, parameter=CoContent){
 					lastCalculation [ "2023-09-12T 10:30:00.000+0200", "2023-09-12T 09:30:00.000+0200" ]
 					nextCalculation "2023-09-12T 11:30:00.000+0200"
 				},
-				TRANSPORTENERGYCONSUMPTIONmeasurement_indicator(status=WARN, parameter=TransportEnergyConsumption){  // <-- Scoping for KPIMeasurementDevice_parameter
+				TRANSPORTENERGYCONSUMPTIONmeasurement_indicator(status=WARN, parameter=TransportEnergyConsumption){
 					lastCalculation [ "2023-09-12T 10:30:00.000+0200", "2023-09-12T 09:30:00.000+0200" ]
 					nextCalculation "2023-09-12T 11:30:00.000+0200"
 				}
@@ -183,8 +200,7 @@ SmartCity SmartVienna {
 						}
 					}
 					transportationComponentSub [STWienerLinienUbahn, STWienerLinienStrassenbahn, STTrafficLights]
-				}
-				,
+				},
 				TransportationComponent STWienerLinienStrassenbahn {
 					transportationComponentSuper STTrafficLights
 					transportComponentLocation: lat=16.0738, long=12.0472
@@ -197,8 +213,7 @@ SmartCity SmartVienna {
 							}
 						dataSource: STWienerLinienStrassenbahn
 					}					
-				}
-				,
+				},
 				TransportationComponent STWienerLinienUbahn {
 					transportationComponentSuper STWienerLinien
 					transportComponentLocation: lat=16.0738, long=12.0472
@@ -211,8 +226,7 @@ SmartCity SmartVienna {
 							}
 						dataSource: STWienerLinienUbahn 
 					} 
-				}
-				,
+				},
 				EnvironmentalComponent STTrafficLights {
 					environmentalComponentSuper STWienerLinien
 					environmentalComponentLocation : lat=16.0738, long=12.0472
@@ -234,8 +248,7 @@ SmartCity SmartVienna {
 					environmentalComponentDevices [
 						Sensor Camera(type=NAVIGATION)
 					]
-				}
-				,
+				},
 				BuildingComponent STWestBahnhofControlRoom {
 					buildingComponentLocation : lat=16.0738, long=12.0472
 					buildingComponentParameter energyConsumed(unit="Watts", type=ENERGY){
