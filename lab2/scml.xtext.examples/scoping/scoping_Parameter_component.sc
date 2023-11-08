@@ -12,7 +12,7 @@ SmartCity SmartVienna {
 								principleType POLICY
 								source "UN"
 							}
-						dataSource: GETurkenschanzpark
+						dataSource: GETurkenschanzpark   // <-- Required Parameter Scoping
 						observedValue {
 							value : "8.75" 
 							type: FLOAT 
@@ -71,7 +71,7 @@ SmartCity SmartVienna {
 								principleType LAW
 								source "National Transportation Ministry"
 							}
-						dataSource: GEWienerLinienBusDepartment
+						dataSource: GEWienerLinienBusDepartment   // <-- Required Parameter Scoping
 						observedValue {
 							value : "89"
 							type : INTEGER
@@ -118,7 +118,7 @@ SmartCity SmartVienna {
 								principleType STANDARD
 								source "World Energy Conservation Forum"
 							}
-						dataSource: GETUKarlsplatz
+						dataSource: GETUKarlsplatz  // <-- Required Parameter Scoping
 						observedValue {
 							value : "14"
 							type: INTEGER
@@ -153,11 +153,11 @@ SmartCity SmartVienna {
 				}
 			]
 			indicators [
-				COCONTENTmeasurement_indicator(status=GOOD, parameter=CoContent){   // <-- Scoping for KPIMeasurementDevice_parameter
+				COCONTENTmeasurement_indicator(status=GOOD, parameter=CoContent){
 					lastCalculation [ "2023-09-12T 10:30:00.000+0200", "2023-09-12T 09:30:00.000+0200" ]
 					nextCalculation "2023-09-12T 11:30:00.000+0200"
 				},
-				TRANSPORTENERGYCONSUMPTIONmeasurement_indicator(status=WARN, parameter=TransportEnergyConsumption){  // <-- Scoping for KPIMeasurementDevice_parameter
+				TRANSPORTENERGYCONSUMPTIONmeasurement_indicator(status=WARN, parameter=TransportEnergyConsumption){
 					lastCalculation [ "2023-09-12T 10:30:00.000+0200", "2023-09-12T 09:30:00.000+0200" ]
 					nextCalculation "2023-09-12T 11:30:00.000+0200"
 				}
@@ -174,7 +174,7 @@ SmartCity SmartVienna {
 								principleType LAW
 								source "National Transportation Ministry"
 							}
-						dataSource: STWienerLinien
+						dataSource: STWienerLinien  // <-- Required Parameter Scoping
 						observedValue {
 							value : "67"
 							type : INTEGER
@@ -195,7 +195,7 @@ SmartCity SmartVienna {
 								principleType LAW
 								source "National Transportation Ministry"
 							}
-						dataSource: STWienerLinienStrassenbahn
+						dataSource: STWienerLinienStrassenbahn  // <-- Required Parameter Scoping
 					}					
 				}
 				,
@@ -209,7 +209,7 @@ SmartCity SmartVienna {
 								principleType LAW
 								source "National Transportation Ministry"
 							}
-						dataSource: STWienerLinienUbahn 
+						dataSource: STWienerLinienUbahn   // <-- Required Parameter Scoping
 					} 
 				}
 				,
@@ -223,7 +223,7 @@ SmartCity SmartVienna {
 								principleType POLICY
 								source "UN"
 							}
-						dataSource: STTrafficLights
+						dataSource: STTrafficLights  // <-- Required Parameter Scoping
 						observedValue {
 							value : "8.75" 
 							type: FLOAT 
@@ -245,7 +245,7 @@ SmartCity SmartVienna {
 								principleType LAW
 								source "National Transportation Ministry"
 							}
-						dataSource: STWestBahnhofControlRoom 
+						dataSource: STWestBahnhofControlRoom   // <-- Required Parameter Scoping
 					}
 				}
 			]

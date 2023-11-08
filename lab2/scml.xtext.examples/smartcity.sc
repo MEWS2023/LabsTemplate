@@ -153,11 +153,11 @@ SmartCity SmartVienna {
 				}
 			]
 			indicators [
-				COCONTENTmeasurement_indicator(status=GOOD, parameter=CoContent){   // <-- Scoping for KPIMeasurementDevice_parameter
+				COCONTENTmeasurement_indicator(status=GOOD, parameter=CoContent){
 					lastCalculation [ "2023-09-12T 10:30:00.000+0200", "2023-09-12T 09:30:00.000+0200" ]
 					nextCalculation "2023-09-12T 11:30:00.000+0200"
 				},
-				TRANSPORTENERGYCONSUMPTIONmeasurement_indicator(status=WARN, parameter=TransportEnergyConsumption){  // <-- Scoping for KPIMeasurementDevice_parameter
+				TRANSPORTENERGYCONSUMPTIONmeasurement_indicator(status=WARN, parameter=TransportEnergyConsumption){
 					lastCalculation [ "2023-09-12T 10:30:00.000+0200", "2023-09-12T 09:30:00.000+0200" ]
 					nextCalculation "2023-09-12T 11:30:00.000+0200"
 				}
