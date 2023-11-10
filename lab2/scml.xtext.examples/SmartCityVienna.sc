@@ -170,11 +170,11 @@ SmartCity SmartVienna {
 				}
 			]
 			indicators [
-				COCONTENTmeasurement_indicator(status=GOOD, parameter=CoContent){
+				COCONTENTmeasurement_indicator(status=GOOD, parameter="GETurkenschanzpark.CoContent"){
 					lastCalculation [ "2023-09-12T 10:30:00.000+0200", "2023-09-12T 09:30:00.000+0200" ]
 					nextCalculation "2023-09-12T 11:30:00.000+0200"
 				},
-				TRANSPORTENERGYCONSUMPTIONmeasurement_indicator(status=WARN, parameter=TransportEnergyConsumption){
+				TRANSPORTENERGYCONSUMPTIONmeasurement_indicator(status=WARN, parameter="GEWienerLinienBusDepartment.TransportEnergyConsumption"){
 					lastCalculation [ "2023-09-12T 10:30:00.000+0200", "2023-09-12T 09:30:00.000+0200" ]
 					nextCalculation "2023-09-12T 11:30:00.000+0200"
 				}
