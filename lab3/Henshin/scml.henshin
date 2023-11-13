@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="__ZNnoIJOEe6xZcpWuT3GYQ">
+  <imports href="../scml/model/scml.ecore#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_Auk4EIJPEe6xZcpWuT3GYQ" name="removeCollectedData">
+    <lhs xmi:id="_AupwkIJPEe6xZcpWuT3GYQ" name="Lhs"/>
+    <rhs xmi:id="_AuqXoIJPEe6xZcpWuT3GYQ" name="Rhs"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_DEtB8IJPEe6xZcpWuT3GYQ" name="getComponent">
+    <parameters xmi:id="_EgPL0IJPEe6xZcpWuT3GYQ" name="c" kind="OUT">
+      <type xsi:type="ecore:EClass" href="../scml/model/scml.ecore#//InfrastructureComponent"/>
+    </parameters>
+    <lhs xmi:id="_DEwsUIJPEe6xZcpWuT3GYQ" name="Lhs"/>
+    <rhs xmi:id="_DEwsUYJPEe6xZcpWuT3GYQ" name="Rhs"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_FWEAkIJPEe6xZcpWuT3GYQ" name="addDataToComponent">
+    <parameters xmi:id="_VrVl4IJPEe6xZcpWuT3GYQ" name="val" kind="IN"/>
+    <parameters xmi:id="_IHBFQIJPEe6xZcpWuT3GYQ" name="c" kind="OUT">
+      <type xsi:type="ecore:EClass" href="../scml/model/scml.ecore#//InfrastructureComponent"/>
+    </parameters>
+    <lhs xmi:id="_FWHq8IJPEe6xZcpWuT3GYQ" name="Lhs"/>
+    <rhs xmi:id="_FWHq8YJPEe6xZcpWuT3GYQ" name="Rhs"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_qmLBEIJPEe6xZcpWuT3GYQ" name="setWarning">
+    <lhs xmi:id="_qmPSgIJPEe6xZcpWuT3GYQ" name="Lhs"/>
+    <rhs xmi:id="_qmPSgYJPEe6xZcpWuT3GYQ" name="Rhs"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_wm-F4IJPEe6xZcpWuT3GYQ" name="setCritical">
+    <lhs xmi:id="_wnC-YIJPEe6xZcpWuT3GYQ" name="Lhs"/>
+    <rhs xmi:id="_wnC-YYJPEe6xZcpWuT3GYQ" name="Rhs"/>
+  </units>
+</henshin:Module>
