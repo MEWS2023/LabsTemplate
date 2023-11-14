@@ -1,0 +1,5 @@
+-- @path SCML=/scml/model/scml.ecore
+-- @path CAEX=/scml.atl/caex/CAEX.ecore
+
+module scml2caex;
+create OUT : CAEX from IN : SCML;
