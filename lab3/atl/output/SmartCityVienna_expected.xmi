@@ -6,19 +6,19 @@
       <attribute name="Parameter" value="CoContent"/>
       <internalElement name="Co2 detector 1 [Sensor]"/>
       <internalElement name="Co2 detector 2 [Sensor]"/>
-      <internalElement name="5::INTEGER collected"/>
-      <internalElement name="8::INTEGER collected"/>
-      <internalElement name="12::INTEGER collected"/>
-      <internalElement name="10::INTEGER collected"/>
+      <internalElement name="INTEGER::5 collected"/>
+      <internalElement name="INTEGER::8 collected"/>
+      <internalElement name="INTEGER::12 collected"/>
+      <internalElement name="INTEGER::10 collected"/>
     </internalElement>
     <internalElement name="GE Wiener Linien Bus Department [TRANSPORTATION]">
       <attribute name="Location" value="22.033 | 12.032"/>
       <attribute name="Parameter" value="TransportEnergyConsumption"/>
       <internalElement name="energy consumed detector [Sensor]"/>
       <internalElement name="energy manager [Actuator]"/>
-      <internalElement name="65::INTEGER collected"/>
-      <internalElement name="68::INTEGER collected"/>
-      <internalElement name="89::INTEGER collected"/>
+      <internalElement name="INTEGER::65 collected"/>
+      <internalElement name="INTEGER::68 collected"/>
+      <internalElement name="INTEGER::89 collected"/>
     </internalElement>
     <internalElement name="GE TU Karlsplatz [BUILDING]">
       <attribute name="Location" value="21.0 | 12.0"/>
@@ -26,8 +26,8 @@
       <internalElement name="Photocells [Sensor]"/>
       <internalElement name="Automatic luminiscence manager [Actuator]"/>
       <internalElement name="Motion Detector [Sensor]"/>
-      <internalElement name="11.5::FLOAT collected"/>
-      <internalElement name="13.5::FLOAT"/>
+      <internalElement name="FLOAT::11.5 collected"/>
+      <internalElement name="FLOAT::13.5"/>
     </internalElement>
     <internalElement name="COCONTENTmeasurement_AQI[GOOD]">
       <attribute name="nextCalculation" value="2023-12-13T15:30:00.000+0200"/>
