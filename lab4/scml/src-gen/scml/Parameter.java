@@ -16,6 +16,7 @@ package scml;
  *   <li>{@link scml.Parameter#getObservedValue <em>Observed Value</em>}</li>
  *   <li>{@link scml.Parameter#getComponent <em>Component</em>}</li>
  *   <li>{@link scml.Parameter#getType <em>Type</em>}</li>
+ *   <li>{@link scml.Parameter#getKpimeasurementdevice <em>Kpimeasurementdevice</em>}</li>
  * </ul>
  *
  * @see scml.ScmlPackage#getParameter()
@@ -135,5 +136,29 @@ public interface Parameter extends NamedElement {
 	 * @generated
 	 */
 	void setType(ParameterType value);
+
+	/**
+	 * Returns the value of the '<em><b>Kpimeasurementdevice</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link scml.KPIMeasurementDevice#getParameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Kpimeasurementdevice</em>' reference.
+	 * @see #setKpimeasurementdevice(KPIMeasurementDevice)
+	 * @see scml.ScmlPackage#getParameter_Kpimeasurementdevice()
+	 * @see scml.KPIMeasurementDevice#getParameter
+	 * @model opposite="parameter"
+	 * @generated
+	 */
+	KPIMeasurementDevice getKpimeasurementdevice();
+
+	/**
+	 * Sets the value of the '{@link scml.Parameter#getKpimeasurementdevice <em>Kpimeasurementdevice</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Kpimeasurementdevice</em>' reference.
+	 * @see #getKpimeasurementdevice()
+	 * @generated
+	 */
+	void setKpimeasurementdevice(KPIMeasurementDevice value);
 
 } // Parameter

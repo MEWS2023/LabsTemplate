@@ -4,9 +4,8 @@ import scml.SmartCity
 
 class RunnerGenerator {
 		
-	def generate(SmartCity smartcity)
+	def generate(SmartCity sc)
 	'''
 	# TODO: Implement
 	'''
-	
 }

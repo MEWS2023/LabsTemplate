@@ -72,6 +72,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scml.ecore#//Parameter/observedValue"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference scml.ecore#//Parameter/component"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//Parameter/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference scml.ecore#//Parameter/kpimeasurementdevice"/>
     </genClasses>
     <genClasses ecoreClass="scml.ecore#//DataValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//DataValue/collected"/>

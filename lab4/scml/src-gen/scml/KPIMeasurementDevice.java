@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see scml.ScmlPackage#getKPIMeasurementDevice()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='calculationDateComparison'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='checkStatusCRITICAL'"
  * @generated
  */
 public interface KPIMeasurementDevice extends NamedElement {
@@ -87,12 +87,14 @@ public interface KPIMeasurementDevice extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Parameter</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link scml.Parameter#getKpimeasurementdevice <em>Kpimeasurementdevice</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameter</em>' reference.
 	 * @see #setParameter(Parameter)
 	 * @see scml.ScmlPackage#getKPIMeasurementDevice_Parameter()
-	 * @model
+	 * @see scml.Parameter#getKpimeasurementdevice
+	 * @model opposite="kpimeasurementdevice" required="true"
 	 * @generated
 	 */
 	Parameter getParameter();
@@ -118,26 +120,10 @@ public interface KPIMeasurementDevice extends NamedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='     ------ 2. implicit constraint ---------\n\t\tself.name.size() &gt;= self.parameter.name.size() and \n\t\tself.name.substring(1, self.parameter.name.size() + 11) = (self.parameter.name.toUpper() + \'measurement\')'"
-	 * @generated
-	 */
-	boolean nameHasParameterPrefix(DiagnosticChain diagnostics, Map<Object, Object> context);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='            ------ 2. explicit constraint ---------\n\t\t(\n\t\t\tself.parameter.observedValue &lt;&gt; null and \n\t\t\tself.status=Status::WARN and \n\t\t\tself.parameter.observedValue.type = DataType::INTEGER and\n\t\t\tself.parameter.goalreferencevalue.type = DataType::INTEGER\n\t\t) implies\n\t\t(\n\t\t\t(self.parameter.observedValue.value.toInteger() &gt;= (self.parameter.goalreferencevalue.value.toInteger() * (1-0.25))) or \n\t\t\t(self.parameter.observedValue.value.toInteger() &lt;= (self.parameter.goalreferencevalue.value.toInteger() * (1+0.25)))\n\t\t)'"
 	 * @generated
 	 */
 	boolean checkStatusWARN(DiagnosticChain diagnostics, Map<Object, Object> context);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='                ------ 2. explicit constraint ---------\n\t\t(\n\t\t\tself.parameter.observedValue &lt;&gt; null and \n\t\t\tself.status=Status::GOOD and \n\t\t\tself.parameter.observedValue.type = DataType::INTEGER and\n\t\t\tself.parameter.goalreferencevalue.type = DataType::INTEGER\n\t\t) implies\n\t\t(\n\t\t\t(self.parameter.observedValue.value.toInteger() &gt;= (self.parameter.goalreferencevalue.value.toInteger() * (1-0.05))) or \n\t\t\t(self.parameter.observedValue.value.toInteger() &lt;= (self.parameter.goalreferencevalue.value.toInteger() * (1+0.05)))\n\t\t)'"
-	 * @generated
-	 */
-	boolean checkStatusGOOD(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

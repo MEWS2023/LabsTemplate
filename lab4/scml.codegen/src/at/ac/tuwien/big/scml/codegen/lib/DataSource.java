@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.Optional;
 import java.util.Queue;
 
+
 public class DataSource<T> {
 
 	private Queue<T> queue = new LinkedList<>();
@@ -14,7 +15,9 @@ public class DataSource<T> {
 		constant = Optional.ofNullable(value);
 	}
 		
+	@SuppressWarnings("unchecked")
 	public void fill(T... data){
+		
 		queue.addAll(Arrays.asList(data));
 		constant = Optional.empty();
 	}

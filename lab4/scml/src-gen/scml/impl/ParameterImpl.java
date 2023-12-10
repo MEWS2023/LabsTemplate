@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import scml.AggregatedValue;
 import scml.GoalReferenceValue;
 import scml.InfrastructureComponent;
+import scml.KPIMeasurementDevice;
 import scml.Parameter;
 import scml.ParameterType;
 import scml.ScmlPackage;
@@ -30,6 +31,7 @@ import scml.ScmlPackage;
  *   <li>{@link scml.impl.ParameterImpl#getObservedValue <em>Observed Value</em>}</li>
  *   <li>{@link scml.impl.ParameterImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link scml.impl.ParameterImpl#getType <em>Type</em>}</li>
+ *   <li>{@link scml.impl.ParameterImpl#getKpimeasurementdevice <em>Kpimeasurementdevice</em>}</li>
  * </ul>
  *
  * @generated
@@ -104,6 +106,16 @@ public class ParameterImpl extends NamedElementImpl implements Parameter {
 	 * @ordered
 	 */
 	protected ParameterType type = TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getKpimeasurementdevice() <em>Kpimeasurementdevice</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKpimeasurementdevice()
+	 * @generated
+	 * @ordered
+	 */
+	protected KPIMeasurementDevice kpimeasurementdevice;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -323,12 +335,103 @@ public class ParameterImpl extends NamedElementImpl implements Parameter {
 	 * @generated
 	 */
 	@Override
+	public KPIMeasurementDevice getKpimeasurementdevice() {
+		if (kpimeasurementdevice != null && kpimeasurementdevice.eIsProxy()) {
+			InternalEObject oldKpimeasurementdevice = (InternalEObject) kpimeasurementdevice;
+			kpimeasurementdevice = (KPIMeasurementDevice) eResolveProxy(oldKpimeasurementdevice);
+			if (kpimeasurementdevice != oldKpimeasurementdevice) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							ScmlPackage.PARAMETER__KPIMEASUREMENTDEVICE, oldKpimeasurementdevice,
+							kpimeasurementdevice));
+			}
+		}
+		return kpimeasurementdevice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public KPIMeasurementDevice basicGetKpimeasurementdevice() {
+		return kpimeasurementdevice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetKpimeasurementdevice(KPIMeasurementDevice newKpimeasurementdevice,
+			NotificationChain msgs) {
+		KPIMeasurementDevice oldKpimeasurementdevice = kpimeasurementdevice;
+		kpimeasurementdevice = newKpimeasurementdevice;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					ScmlPackage.PARAMETER__KPIMEASUREMENTDEVICE, oldKpimeasurementdevice, newKpimeasurementdevice);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setKpimeasurementdevice(KPIMeasurementDevice newKpimeasurementdevice) {
+		if (newKpimeasurementdevice != kpimeasurementdevice) {
+			NotificationChain msgs = null;
+			if (kpimeasurementdevice != null)
+				msgs = ((InternalEObject) kpimeasurementdevice).eInverseRemove(this,
+						ScmlPackage.KPI_MEASUREMENT_DEVICE__PARAMETER, KPIMeasurementDevice.class, msgs);
+			if (newKpimeasurementdevice != null)
+				msgs = ((InternalEObject) newKpimeasurementdevice).eInverseAdd(this,
+						ScmlPackage.KPI_MEASUREMENT_DEVICE__PARAMETER, KPIMeasurementDevice.class, msgs);
+			msgs = basicSetKpimeasurementdevice(newKpimeasurementdevice, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScmlPackage.PARAMETER__KPIMEASUREMENTDEVICE,
+					newKpimeasurementdevice, newKpimeasurementdevice));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case ScmlPackage.PARAMETER__KPIMEASUREMENTDEVICE:
+			if (kpimeasurementdevice != null)
+				msgs = ((InternalEObject) kpimeasurementdevice).eInverseRemove(this,
+						ScmlPackage.KPI_MEASUREMENT_DEVICE__PARAMETER, KPIMeasurementDevice.class, msgs);
+			return basicSetKpimeasurementdevice((KPIMeasurementDevice) otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ScmlPackage.PARAMETER__GOALREFERENCEVALUE:
 			return basicSetGoalreferencevalue(null, msgs);
 		case ScmlPackage.PARAMETER__OBSERVED_VALUE:
 			return basicSetObservedValue(null, msgs);
+		case ScmlPackage.PARAMETER__KPIMEASUREMENTDEVICE:
+			return basicSetKpimeasurementdevice(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -353,6 +456,10 @@ public class ParameterImpl extends NamedElementImpl implements Parameter {
 			return basicGetComponent();
 		case ScmlPackage.PARAMETER__TYPE:
 			return getType();
+		case ScmlPackage.PARAMETER__KPIMEASUREMENTDEVICE:
+			if (resolve)
+				return getKpimeasurementdevice();
+			return basicGetKpimeasurementdevice();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -379,6 +486,9 @@ public class ParameterImpl extends NamedElementImpl implements Parameter {
 			return;
 		case ScmlPackage.PARAMETER__TYPE:
 			setType((ParameterType) newValue);
+			return;
+		case ScmlPackage.PARAMETER__KPIMEASUREMENTDEVICE:
+			setKpimeasurementdevice((KPIMeasurementDevice) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -407,6 +517,9 @@ public class ParameterImpl extends NamedElementImpl implements Parameter {
 		case ScmlPackage.PARAMETER__TYPE:
 			setType(TYPE_EDEFAULT);
 			return;
+		case ScmlPackage.PARAMETER__KPIMEASUREMENTDEVICE:
+			setKpimeasurementdevice((KPIMeasurementDevice) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -429,6 +542,8 @@ public class ParameterImpl extends NamedElementImpl implements Parameter {
 			return component != null;
 		case ScmlPackage.PARAMETER__TYPE:
 			return type != TYPE_EDEFAULT;
+		case ScmlPackage.PARAMETER__KPIMEASUREMENTDEVICE:
+			return kpimeasurementdevice != null;
 		}
 		return super.eIsSet(featureID);
 	}

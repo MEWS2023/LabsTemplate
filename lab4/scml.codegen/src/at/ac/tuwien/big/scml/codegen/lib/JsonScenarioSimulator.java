@@ -5,14 +5,27 @@ import java.util.Map;
 
 public class JsonScenarioSimulator {
 	
+	private Map<String, Integer> valueAggregationLimitMap;
+	private Map<String, Map<String, DataSource<String>>> dataSources;
+	
+	public int setUpDataLoaders(SmartCityRunner runner, String filePath) throws IOException {
+		
+		DataSourceLoader loader = new DataSourceLoader();
+		valueAggregationLimitMap = loader.getValueAggregationLimitMap(filePath);
+		dataSources = loader.getDataSources(filePath);
+		int length = getMaximalQueueLength(dataSources);
+		
+		runner.setup(dataSources, valueAggregationLimitMap);
+		
+		return length;
+	}
+	
 	public void simulate(SmartCityRunner runner, String filePath) {
 		
 		try {
-			DataSourceLoader loader = new DataSourceLoader();
-			Map<String, DataSource<?>> dataSources = loader.loadDataSource(filePath);
-			runner.setup(dataSources);
 			
-			int length = getMaximalQueueLength(dataSources);
+			int length = setUpDataLoaders(runner, filePath);
+			
 			for (int i = 0; i < length; i++) {
 				
 				runner.step();
@@ -25,15 +38,11 @@ public class JsonScenarioSimulator {
 	public void simulateStepwise(SmartCityRunner runner, String filePath) {
 		
 		try {
-			DataSourceLoader loader = new DataSourceLoader();
-			Map<String, DataSource<?>> dataSources = loader.loadDataSource(filePath);
-			runner.setup(dataSources);
-			
-			int length = getMaximalQueueLength(dataSources);
+			int length = setUpDataLoaders(runner, filePath);
 			
 			byte[] buffer = new byte[256];
 			int steps = 0;
-			
+//			
 			while (length > 0) {
 				System.out.println(Util.ANSI_GREEN + "Hit <enter> to simulate the next step.");
 				System.out.println("Type in a <number> to simulate a number of steps.");
@@ -65,11 +74,13 @@ public class JsonScenarioSimulator {
 		}
 	}
 	
-	private int getMaximalQueueLength(Map<String, DataSource<?>> dataSources) {
+	private int getMaximalQueueLength(Map<String, Map<String, DataSource<String>>> dataSources) {
 		int max = 0;
-		for(DataSource<?> source : dataSources.values()) {
-			int length = source.getQueueLength();
-			if (max < length) max = length;
+		for(Map<String, DataSource<String>> projectComponentDatasources : dataSources.values()) {
+			for(DataSource<?> source : projectComponentDatasources.values()) {
+				int length = source.getQueueLength();
+				if (max < length) max = length;
+			}
 		}
 		return max;
 	}

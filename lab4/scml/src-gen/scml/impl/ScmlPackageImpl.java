@@ -365,26 +365,6 @@ public class ScmlPackageImpl extends EPackageImpl implements ScmlPackage {
 	 */
 	@Override
 	public EOperation getKPIMeasurementDevice__CheckStatusCRITICAL__DiagnosticChain_Map() {
-		return kpiMeasurementDeviceEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getKPIMeasurementDevice__NameHasParameterPrefix__DiagnosticChain_Map() {
-		return kpiMeasurementDeviceEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getKPIMeasurementDevice__CheckStatusWARN__DiagnosticChain_Map() {
 		return kpiMeasurementDeviceEClass.getEOperations().get(2);
 	}
 
@@ -394,8 +374,8 @@ public class ScmlPackageImpl extends EPackageImpl implements ScmlPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getKPIMeasurementDevice__CheckStatusGOOD__DiagnosticChain_Map() {
-		return kpiMeasurementDeviceEClass.getEOperations().get(3);
+	public EOperation getKPIMeasurementDevice__CheckStatusWARN__DiagnosticChain_Map() {
+		return kpiMeasurementDeviceEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -405,7 +385,7 @@ public class ScmlPackageImpl extends EPackageImpl implements ScmlPackage {
 	 */
 	@Override
 	public EOperation getKPIMeasurementDevice__CalculationDateComparison__DiagnosticChain_Map() {
-		return kpiMeasurementDeviceEClass.getEOperations().get(4);
+		return kpiMeasurementDeviceEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -586,6 +566,16 @@ public class ScmlPackageImpl extends EPackageImpl implements ScmlPackage {
 	@Override
 	public EAttribute getParameter_Type() {
 		return (EAttribute) parameterEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getParameter_Kpimeasurementdevice() {
+		return (EReference) parameterEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1047,13 +1037,10 @@ public class ScmlPackageImpl extends EPackageImpl implements ScmlPackage {
 		createEAttribute(kpiMeasurementDeviceEClass, KPI_MEASUREMENT_DEVICE__NEXT_CALCULATION);
 		createEReference(kpiMeasurementDeviceEClass, KPI_MEASUREMENT_DEVICE__PARAMETER);
 		createEOperation(kpiMeasurementDeviceEClass,
-				KPI_MEASUREMENT_DEVICE___CHECK_STATUS_CRITICAL__DIAGNOSTICCHAIN_MAP);
-		createEOperation(kpiMeasurementDeviceEClass,
-				KPI_MEASUREMENT_DEVICE___NAME_HAS_PARAMETER_PREFIX__DIAGNOSTICCHAIN_MAP);
-		createEOperation(kpiMeasurementDeviceEClass, KPI_MEASUREMENT_DEVICE___CHECK_STATUS_WARN__DIAGNOSTICCHAIN_MAP);
-		createEOperation(kpiMeasurementDeviceEClass, KPI_MEASUREMENT_DEVICE___CHECK_STATUS_GOOD__DIAGNOSTICCHAIN_MAP);
-		createEOperation(kpiMeasurementDeviceEClass,
 				KPI_MEASUREMENT_DEVICE___CALCULATION_DATE_COMPARISON__DIAGNOSTICCHAIN_MAP);
+		createEOperation(kpiMeasurementDeviceEClass, KPI_MEASUREMENT_DEVICE___CHECK_STATUS_WARN__DIAGNOSTICCHAIN_MAP);
+		createEOperation(kpiMeasurementDeviceEClass,
+				KPI_MEASUREMENT_DEVICE___CHECK_STATUS_CRITICAL__DIAGNOSTICCHAIN_MAP);
 
 		basisEClass = createEClass(BASIS);
 		createEAttribute(basisEClass, BASIS__DESCRIPTION);
@@ -1077,6 +1064,7 @@ public class ScmlPackageImpl extends EPackageImpl implements ScmlPackage {
 		createEReference(parameterEClass, PARAMETER__OBSERVED_VALUE);
 		createEReference(parameterEClass, PARAMETER__COMPONENT);
 		createEAttribute(parameterEClass, PARAMETER__TYPE);
+		createEReference(parameterEClass, PARAMETER__KPIMEASUREMENTDEVICE);
 
 		dataValueEClass = createEClass(DATA_VALUE);
 		createEAttribute(dataValueEClass, DATA_VALUE__COLLECTED);
@@ -1199,25 +1187,16 @@ public class ScmlPackageImpl extends EPackageImpl implements ScmlPackage {
 		initEAttribute(getKPIMeasurementDevice_NextCalculation(), ecorePackage.getEString(), "nextCalculation", null, 1,
 				1, KPIMeasurementDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getKPIMeasurementDevice_Parameter(), this.getParameter(), null, "parameter", null, 0, 1,
-				KPIMeasurementDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getKPIMeasurementDevice_Parameter(), this.getParameter(),
+				this.getParameter_Kpimeasurementdevice(), "parameter", null, 1, 1, KPIMeasurementDevice.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getKPIMeasurementDevice__CheckStatusCRITICAL__DiagnosticChain_Map(),
-				ecorePackage.getEBoolean(), "checkStatusCRITICAL", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getKPIMeasurementDevice__CalculationDateComparison__DiagnosticChain_Map(),
+				ecorePackage.getEBoolean(), "calculationDateComparison", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getKPIMeasurementDevice__NameHasParameterPrefix__DiagnosticChain_Map(),
-				ecorePackage.getEBoolean(), "nameHasParameterPrefix", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
@@ -1233,18 +1212,8 @@ public class ScmlPackageImpl extends EPackageImpl implements ScmlPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getKPIMeasurementDevice__CheckStatusGOOD__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"checkStatusGOOD", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getKPIMeasurementDevice__CalculationDateComparison__DiagnosticChain_Map(),
-				ecorePackage.getEBoolean(), "calculationDateComparison", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getKPIMeasurementDevice__CheckStatusCRITICAL__DiagnosticChain_Map(),
+				ecorePackage.getEBoolean(), "checkStatusCRITICAL", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1297,6 +1266,10 @@ public class ScmlPackageImpl extends EPackageImpl implements ScmlPackage {
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParameter_Type(), this.getParameterType(), "type", null, 1, 1, Parameter.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParameter_Kpimeasurementdevice(), this.getKPIMeasurementDevice(),
+				this.getKPIMeasurementDevice_Parameter(), "kpimeasurementdevice", null, 0, 1, Parameter.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataValueEClass, DataValue.class, "DataValue", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1505,7 +1478,7 @@ public class ScmlPackageImpl extends EPackageImpl implements ScmlPackage {
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore";
 		addAnnotation(this, source, new String[] {});
-		addAnnotation(kpiMeasurementDeviceEClass, source, new String[] { "constraints", "calculationDateComparison" });
+		addAnnotation(kpiMeasurementDeviceEClass, source, new String[] { "constraints", "checkStatusCRITICAL" });
 		addAnnotation(dataValueEClass, source, new String[] { "constraints", "checkConsumedTimeSet" });
 		addAnnotation(infrastructureComponentEClass, source,
 				new String[] { "constraints", "nameHasPrefixInitialOfProject" });
@@ -1522,19 +1495,14 @@ public class ScmlPackageImpl extends EPackageImpl implements ScmlPackage {
 	 */
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
-		addAnnotation(getKPIMeasurementDevice__CheckStatusCRITICAL__DiagnosticChain_Map(), source, new String[] {
-				"body",
-				"      ------ 3. explicit constraint ---------\n\t\t(\n\t\t\tself.parameter.observedValue <> null and \n\t\t\tself.status=Status::CRITICAL and \n\t\t\tself.parameter.observedValue.type = DataType::INTEGER and\n\t\t\tself.parameter.goalreferencevalue.type = DataType::INTEGER\n\t\t) implies\n\t\t(self.parameter.observedValue.value.toInteger() > (self.parameter.goalreferencevalue.value.toInteger() * (1+0.25)))" });
-		addAnnotation(getKPIMeasurementDevice__NameHasParameterPrefix__DiagnosticChain_Map(), source, new String[] {
-				"body",
-				"     ------ 2. implicit constraint ---------\n\t\tself.name.size() >= self.parameter.name.size() and \n\t\tself.name.substring(1, self.parameter.name.size() + 11) = (self.parameter.name.toUpper() + \'measurement\')" });
-		addAnnotation(getKPIMeasurementDevice__CheckStatusWARN__DiagnosticChain_Map(), source, new String[] { "body",
-				"            ------ 2. explicit constraint ---------\n\t\t(\n\t\t\tself.parameter.observedValue <> null and \n\t\t\tself.status=Status::WARN and \n\t\t\tself.parameter.observedValue.type = DataType::INTEGER and\n\t\t\tself.parameter.goalreferencevalue.type = DataType::INTEGER\n\t\t) implies\n\t\t(\n\t\t\t(self.parameter.observedValue.value.toInteger() >= (self.parameter.goalreferencevalue.value.toInteger() * (1-0.25))) or \n\t\t\t(self.parameter.observedValue.value.toInteger() <= (self.parameter.goalreferencevalue.value.toInteger() * (1+0.25)))\n\t\t)" });
-		addAnnotation(getKPIMeasurementDevice__CheckStatusGOOD__DiagnosticChain_Map(), source, new String[] { "body",
-				"                ------ 2. explicit constraint ---------\n\t\t(\n\t\t\tself.parameter.observedValue <> null and \n\t\t\tself.status=Status::GOOD and \n\t\t\tself.parameter.observedValue.type = DataType::INTEGER and\n\t\t\tself.parameter.goalreferencevalue.type = DataType::INTEGER\n\t\t) implies\n\t\t(\n\t\t\t(self.parameter.observedValue.value.toInteger() >= (self.parameter.goalreferencevalue.value.toInteger() * (1-0.05))) or \n\t\t\t(self.parameter.observedValue.value.toInteger() <= (self.parameter.goalreferencevalue.value.toInteger() * (1+0.05)))\n\t\t)" });
 		addAnnotation(getKPIMeasurementDevice__CalculationDateComparison__DiagnosticChain_Map(), source, new String[] {
 				"body",
 				"   ------ 1. explicit constraint ---------\n\t\tself.lastCalculation -> forAll(d | d < self.nextCalculation)" });
+		addAnnotation(getKPIMeasurementDevice__CheckStatusWARN__DiagnosticChain_Map(), source, new String[] { "body",
+				"            ------ 2. explicit constraint ---------\n\t\t(\n\t\t\tself.parameter.observedValue <> null and \n\t\t\tself.status=Status::WARN and \n\t\t\tself.parameter.observedValue.type = DataType::INTEGER and\n\t\t\tself.parameter.goalreferencevalue.type = DataType::INTEGER\n\t\t) implies\n\t\t(\n\t\t\t(self.parameter.observedValue.value.toInteger() >= (self.parameter.goalreferencevalue.value.toInteger() * (1-0.25))) or \n\t\t\t(self.parameter.observedValue.value.toInteger() <= (self.parameter.goalreferencevalue.value.toInteger() * (1+0.25)))\n\t\t)" });
+		addAnnotation(getKPIMeasurementDevice__CheckStatusCRITICAL__DiagnosticChain_Map(), source, new String[] {
+				"body",
+				"      ------ 3. explicit constraint ---------\n\t\t(\n\t\t\tself.parameter.observedValue <> null and \n\t\t\tself.status=Status::CRITICAL and \n\t\t\tself.parameter.observedValue.type = DataType::INTEGER and\n\t\t\tself.parameter.goalreferencevalue.type = DataType::INTEGER\n\t\t) implies\n\t\t(self.parameter.observedValue.value.toInteger() > (self.parameter.goalreferencevalue.value.toInteger() * (1+0.25)))" });
 		addAnnotation(getDataValue__CheckConsumedTimeProducedTime__DiagnosticChain_Map(), source, new String[] { "body",
 				"      --------- 3. explicit constraint ---------\n\t\tself.consumedTime <> null implies self.consumedTime > self.producedTime" });
 		addAnnotation(getDataValue__CheckConsumedTimeSet__DiagnosticChain_Map(), source, new String[] { "body",

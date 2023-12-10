@@ -161,22 +161,13 @@ public interface ScmlPackage extends EPackage {
 	int KPI_MEASUREMENT_DEVICE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Check Status CRITICAL</em>' operation.
+	 * The operation id for the '<em>Calculation Date Comparison</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KPI_MEASUREMENT_DEVICE___CHECK_STATUS_CRITICAL__DIAGNOSTICCHAIN_MAP = NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Name Has Parameter Prefix</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KPI_MEASUREMENT_DEVICE___NAME_HAS_PARAMETER_PREFIX__DIAGNOSTICCHAIN_MAP = NAMED_ELEMENT_OPERATION_COUNT + 1;
+	int KPI_MEASUREMENT_DEVICE___CALCULATION_DATE_COMPARISON__DIAGNOSTICCHAIN_MAP = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Check Status WARN</em>' operation.
@@ -185,25 +176,16 @@ public interface ScmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KPI_MEASUREMENT_DEVICE___CHECK_STATUS_WARN__DIAGNOSTICCHAIN_MAP = NAMED_ELEMENT_OPERATION_COUNT + 2;
+	int KPI_MEASUREMENT_DEVICE___CHECK_STATUS_WARN__DIAGNOSTICCHAIN_MAP = NAMED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Check Status GOOD</em>' operation.
+	 * The operation id for the '<em>Check Status CRITICAL</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KPI_MEASUREMENT_DEVICE___CHECK_STATUS_GOOD__DIAGNOSTICCHAIN_MAP = NAMED_ELEMENT_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Calculation Date Comparison</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KPI_MEASUREMENT_DEVICE___CALCULATION_DATE_COMPARISON__DIAGNOSTICCHAIN_MAP = NAMED_ELEMENT_OPERATION_COUNT + 4;
+	int KPI_MEASUREMENT_DEVICE___CHECK_STATUS_CRITICAL__DIAGNOSTICCHAIN_MAP = NAMED_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>KPI Measurement Device</em>' class.
@@ -212,7 +194,7 @@ public interface ScmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KPI_MEASUREMENT_DEVICE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 5;
+	int KPI_MEASUREMENT_DEVICE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link scml.impl.BasisImpl <em>Basis</em>}' class.
@@ -499,13 +481,22 @@ public interface ScmlPackage extends EPackage {
 	int PARAMETER__TYPE = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Kpimeasurementdevice</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__KPIMEASUREMENTDEVICE = NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int PARAMETER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Parameter</em>' class.
@@ -1574,16 +1565,6 @@ public interface ScmlPackage extends EPackage {
 	EOperation getKPIMeasurementDevice__CheckStatusCRITICAL__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '{@link scml.KPIMeasurementDevice#nameHasParameterPrefix(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Name Has Parameter Prefix</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Name Has Parameter Prefix</em>' operation.
-	 * @see scml.KPIMeasurementDevice#nameHasParameterPrefix(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getKPIMeasurementDevice__NameHasParameterPrefix__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for the '{@link scml.KPIMeasurementDevice#checkStatusWARN(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Check Status WARN</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1592,16 +1573,6 @@ public interface ScmlPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getKPIMeasurementDevice__CheckStatusWARN__DiagnosticChain_Map();
-
-	/**
-	 * Returns the meta object for the '{@link scml.KPIMeasurementDevice#checkStatusGOOD(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Check Status GOOD</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Check Status GOOD</em>' operation.
-	 * @see scml.KPIMeasurementDevice#checkStatusGOOD(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getKPIMeasurementDevice__CheckStatusGOOD__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link scml.KPIMeasurementDevice#calculationDateComparison(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Calculation Date Comparison</em>}' operation.
@@ -1805,6 +1776,17 @@ public interface ScmlPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getParameter_Type();
+
+	/**
+	 * Returns the meta object for the reference '{@link scml.Parameter#getKpimeasurementdevice <em>Kpimeasurementdevice</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Kpimeasurementdevice</em>'.
+	 * @see scml.Parameter#getKpimeasurementdevice()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EReference getParameter_Kpimeasurementdevice();
 
 	/**
 	 * Returns the meta object for class '{@link scml.DataValue <em>Data Value</em>}'.
@@ -2337,15 +2319,6 @@ public interface ScmlPackage extends EPackage {
 				.getKPIMeasurementDevice__CheckStatusCRITICAL__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>Name Has Parameter Prefix</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation KPI_MEASUREMENT_DEVICE___NAME_HAS_PARAMETER_PREFIX__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getKPIMeasurementDevice__NameHasParameterPrefix__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '<em><b>Check Status WARN</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2353,15 +2326,6 @@ public interface ScmlPackage extends EPackage {
 		 */
 		EOperation KPI_MEASUREMENT_DEVICE___CHECK_STATUS_WARN__DIAGNOSTICCHAIN_MAP = eINSTANCE
 				.getKPIMeasurementDevice__CheckStatusWARN__DiagnosticChain_Map();
-
-		/**
-		 * The meta object literal for the '<em><b>Check Status GOOD</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation KPI_MEASUREMENT_DEVICE___CHECK_STATUS_GOOD__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getKPIMeasurementDevice__CheckStatusGOOD__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Calculation Date Comparison</b></em>' operation.
@@ -2525,6 +2489,14 @@ public interface ScmlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PARAMETER__TYPE = eINSTANCE.getParameter_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Kpimeasurementdevice</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARAMETER__KPIMEASUREMENTDEVICE = eINSTANCE.getParameter_Kpimeasurementdevice();
 
 		/**
 		 * The meta object literal for the '{@link scml.impl.DataValueImpl <em>Data Value</em>}' class.

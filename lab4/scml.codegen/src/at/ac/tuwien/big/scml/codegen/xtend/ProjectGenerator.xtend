@@ -4,11 +4,10 @@ import scml.Project
 
 class ProjectGenerator {
 	
-	public static final String ENV_PACKAGE = "project"
+	public static final String PROJECT_PACKAGE = "project"
 	
-	def generate(String packageName, Project node)
+	def generate(String packageName, Project project)
 	'''
-	# TODO: ImplementProject
+	# TODO: Implement
 	'''
-	
 }

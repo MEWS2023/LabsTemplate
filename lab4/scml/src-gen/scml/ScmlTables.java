@@ -93,21 +93,16 @@ public class ScmlTables extends AbstractTables
 	public static final /*@NonInvalid*/ EnumerationId ENUMid_Status = ScmlTables.PACKid_http_c_s_s_www_example_org_s_scml.getEnumerationId("Status");
 	public static final /*@NonInvalid*/ IntegerValue INT_0 = ValueUtil.integerValueOf("0");
 	public static final /*@NonInvalid*/ IntegerValue INT_1 = ValueUtil.integerValueOf("1");
-	public static final /*@NonInvalid*/ IntegerValue INT_11 = ValueUtil.integerValueOf("11");
 	public static final /*@NonInvalid*/ IntegerValue INT_18 = ValueUtil.integerValueOf("18");
 	public static final /*@NonInvalid*/ IntegerValue INT_180 = ValueUtil.integerValueOf("180");
 	public static final /*@NonInvalid*/ IntegerValue INT_2 = ValueUtil.integerValueOf("2");
 	public static final /*@NonInvalid*/ IntegerValue INT_90 = ValueUtil.integerValueOf("90");
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_PRIMid_String = TypeId.ORDERED_SET.getSpecializedId(TypeId.STRING, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
-	public static final /*@NonInvalid*/ RealValue REA_0_05 = ValueUtil.realValueOf("0.05");
 	public static final /*@NonInvalid*/ RealValue REA_0_25 = ValueUtil.realValueOf("0.25");
 	public static final /*@NonInvalid*/ String STR__32 = " ";
-	public static final /*@NonInvalid*/ String STR_measurement = "measurement";
-	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_KPIMeasurementDevice = TypeId.BAG.getSpecializedId(ScmlTables.CLSSid_KPIMeasurementDevice, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_Parameter = TypeId.BAG.getSpecializedId(ScmlTables.CLSSid_Parameter, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_Project = TypeId.BAG.getSpecializedId(ScmlTables.CLSSid_Project, false, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
 	public static final /*@NonInvalid*/ EnumerationLiteralId ELITid_CRITICAL = ScmlTables.ENUMid_Status.getEnumerationLiteralId("CRITICAL");
-	public static final /*@NonInvalid*/ EnumerationLiteralId ELITid_GOOD = ScmlTables.ENUMid_Status.getEnumerationLiteralId("GOOD");
 	public static final /*@NonInvalid*/ EnumerationLiteralId ELITid_INTEGER = ScmlTables.ENUMid_DataType.getEnumerationLiteralId("INTEGER");
 	public static final /*@NonInvalid*/ EnumerationLiteralId ELITid_WARN = ScmlTables.ENUMid_Status.getEnumerationLiteralId("WARN");
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Category = TypeId.ORDERED_SET.getSpecializedId(ScmlTables.CLSSid_Category, true, ValueUtil.ZERO_VALUE, ValueUtil.UNLIMITED_VALUE);
@@ -468,11 +463,11 @@ public class ScmlTables extends AbstractTables
 
 		public static final ExecutorProperty _Parameter__component = new EcoreExecutorProperty(ScmlPackage.Literals.PARAMETER__COMPONENT, Types._Parameter, 0);
 		public static final ExecutorProperty _Parameter__goalreferencevalue = new EcoreExecutorProperty(ScmlPackage.Literals.PARAMETER__GOALREFERENCEVALUE, Types._Parameter, 1);
-		public static final ExecutorProperty _Parameter__observedValue = new EcoreExecutorProperty(ScmlPackage.Literals.PARAMETER__OBSERVED_VALUE, Types._Parameter, 2);
-		public static final ExecutorProperty _Parameter__type = new EcoreExecutorProperty(ScmlPackage.Literals.PARAMETER__TYPE, Types._Parameter, 3);
-		public static final ExecutorProperty _Parameter__unit = new EcoreExecutorProperty(ScmlPackage.Literals.PARAMETER__UNIT, Types._Parameter, 4);
-		public static final ExecutorProperty _Parameter__InfrastructureComponent__parameter = new ExecutorPropertyWithImplementation("InfrastructureComponent", Types._Parameter, 5, new EcoreLibraryOppositeProperty(ScmlPackage.Literals.INFRASTRUCTURE_COMPONENT__PARAMETER));
-		public static final ExecutorProperty _Parameter__KPIMeasurementDevice__parameter = new ExecutorPropertyWithImplementation("KPIMeasurementDevice", Types._Parameter, 6, new EcoreLibraryOppositeProperty(ScmlPackage.Literals.KPI_MEASUREMENT_DEVICE__PARAMETER));
+		public static final ExecutorProperty _Parameter__kpimeasurementdevice = new EcoreExecutorProperty(ScmlPackage.Literals.PARAMETER__KPIMEASUREMENTDEVICE, Types._Parameter, 2);
+		public static final ExecutorProperty _Parameter__observedValue = new EcoreExecutorProperty(ScmlPackage.Literals.PARAMETER__OBSERVED_VALUE, Types._Parameter, 3);
+		public static final ExecutorProperty _Parameter__type = new EcoreExecutorProperty(ScmlPackage.Literals.PARAMETER__TYPE, Types._Parameter, 4);
+		public static final ExecutorProperty _Parameter__unit = new EcoreExecutorProperty(ScmlPackage.Literals.PARAMETER__UNIT, Types._Parameter, 5);
+		public static final ExecutorProperty _Parameter__InfrastructureComponent__parameter = new ExecutorPropertyWithImplementation("InfrastructureComponent", Types._Parameter, 6, new EcoreLibraryOppositeProperty(ScmlPackage.Literals.INFRASTRUCTURE_COMPONENT__PARAMETER));
 
 		public static final ExecutorProperty _Project__category = new EcoreExecutorProperty(ScmlPackage.Literals.PROJECT__CATEGORY, Types._Project, 0);
 		public static final ExecutorProperty _Project__component = new EcoreExecutorProperty(ScmlPackage.Literals.PROJECT__COMPONENT, Types._Project, 1);
@@ -1894,6 +1889,7 @@ public class ScmlTables extends AbstractTables
 		private static final ExecutorProperty /*@NonNull*/ [] _Parameter = {
 			ScmlTables.Properties._Parameter__component,
 			ScmlTables.Properties._Parameter__goalreferencevalue,
+			ScmlTables.Properties._Parameter__kpimeasurementdevice,
 			ScmlTables.Properties._NamedElement__name,
 			ScmlTables.Properties._Parameter__observedValue,
 			OCLstdlibTables.Properties._OclElement__oclContainer,

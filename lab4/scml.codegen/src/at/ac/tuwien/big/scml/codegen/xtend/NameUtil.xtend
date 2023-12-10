@@ -31,4 +31,8 @@ class NameUtil {
 	static def toPack(String str) {
 		return str.replace(" ", "").replace("-", "_").toLowerCase
 	}
+	
+	static def toClassDec(String str){
+		return toClass(str) + " " + toVar(str);
+	}
 }

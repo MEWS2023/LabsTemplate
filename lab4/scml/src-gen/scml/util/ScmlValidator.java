@@ -45,15 +45,7 @@ public class ScmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KPI_MEASUREMENT_DEVICE__CHECK_STATUS_CRITICAL = 1;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Name Has Parameter Prefix' of 'KPI Measurement Device'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int KPI_MEASUREMENT_DEVICE__NAME_HAS_PARAMETER_PREFIX = 2;
+	public static final int KPI_MEASUREMENT_DEVICE__CHECK_STATUS_CRITICAL = 3;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Check Status WARN' of 'KPI Measurement Device'.
@@ -61,15 +53,7 @@ public class ScmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KPI_MEASUREMENT_DEVICE__CHECK_STATUS_WARN = 3;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Check Status GOOD' of 'KPI Measurement Device'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int KPI_MEASUREMENT_DEVICE__CHECK_STATUS_GOOD = 4;
+	public static final int KPI_MEASUREMENT_DEVICE__CHECK_STATUS_WARN = 2;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Calculation Date Comparison' of 'KPI Measurement Device'.
@@ -77,7 +61,7 @@ public class ScmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KPI_MEASUREMENT_DEVICE__CALCULATION_DATE_COMPARISON = 5;
+	public static final int KPI_MEASUREMENT_DEVICE__CALCULATION_DATE_COMPARISON = 1;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Check Consumed Time Produced Time' of 'Data Value'.
@@ -85,7 +69,7 @@ public class ScmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DATA_VALUE__CHECK_CONSUMED_TIME_PRODUCED_TIME = 6;
+	public static final int DATA_VALUE__CHECK_CONSUMED_TIME_PRODUCED_TIME = 4;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Check Consumed Time Set' of 'Data Value'.
@@ -93,7 +77,7 @@ public class ScmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DATA_VALUE__CHECK_CONSUMED_TIME_SET = 7;
+	public static final int DATA_VALUE__CHECK_CONSUMED_TIME_SET = 5;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Check Not Part Of Itself' of 'Infrastructure Component'.
@@ -101,7 +85,7 @@ public class ScmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int INFRASTRUCTURE_COMPONENT__CHECK_NOT_PART_OF_ITSELF = 8;
+	public static final int INFRASTRUCTURE_COMPONENT__CHECK_NOT_PART_OF_ITSELF = 6;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Name Has Prefix Initial Of Project' of 'Infrastructure Component'.
@@ -109,7 +93,7 @@ public class ScmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int INFRASTRUCTURE_COMPONENT__NAME_HAS_PREFIX_INITIAL_OF_PROJECT = 9;
+	public static final int INFRASTRUCTURE_COMPONENT__NAME_HAS_PREFIX_INITIAL_OF_PROJECT = 7;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Lat Long In Range' of 'Location'.
@@ -117,7 +101,7 @@ public class ScmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LOCATION__LAT_LONG_IN_RANGE = 10;
+	public static final int LOCATION__LAT_LONG_IN_RANGE = 8;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Check SDG Number' of 'Category'.
@@ -125,7 +109,7 @@ public class ScmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CATEGORY__CHECK_SDG_NUMBER = 11;
+	public static final int CATEGORY__CHECK_SDG_NUMBER = 9;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Check Parameter Type' of 'Device'.
@@ -133,7 +117,7 @@ public class ScmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DEVICE__CHECK_PARAMETER_TYPE = 12;
+	public static final int DEVICE__CHECK_PARAMETER_TYPE = 10;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -141,7 +125,7 @@ public class ScmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 12;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 10;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -270,16 +254,12 @@ public class ScmlValidator extends EObjectValidator {
 		if (result || diagnostics != null)
 			result &= validate_EveryMapEntryUnique(kpiMeasurementDevice, diagnostics, context);
 		if (result || diagnostics != null)
+			result &= validateKPIMeasurementDevice_checkStatusCRITICAL(kpiMeasurementDevice, diagnostics, context);
+		if (result || diagnostics != null)
 			result &= validateKPIMeasurementDevice_calculationDateComparison(kpiMeasurementDevice, diagnostics,
 					context);
 		if (result || diagnostics != null)
-			result &= validateKPIMeasurementDevice_checkStatusCRITICAL(kpiMeasurementDevice, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validateKPIMeasurementDevice_nameHasParameterPrefix(kpiMeasurementDevice, diagnostics, context);
-		if (result || diagnostics != null)
 			result &= validateKPIMeasurementDevice_checkStatusWARN(kpiMeasurementDevice, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validateKPIMeasurementDevice_checkStatusGOOD(kpiMeasurementDevice, diagnostics, context);
 		return result;
 	}
 
@@ -306,17 +286,6 @@ public class ScmlValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the nameHasParameterPrefix constraint of '<em>KPI Measurement Device</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateKPIMeasurementDevice_nameHasParameterPrefix(KPIMeasurementDevice kpiMeasurementDevice,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return kpiMeasurementDevice.nameHasParameterPrefix(diagnostics, context);
-	}
-
-	/**
 	 * Validates the checkStatusWARN constraint of '<em>KPI Measurement Device</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -325,17 +294,6 @@ public class ScmlValidator extends EObjectValidator {
 	public boolean validateKPIMeasurementDevice_checkStatusWARN(KPIMeasurementDevice kpiMeasurementDevice,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return kpiMeasurementDevice.checkStatusWARN(diagnostics, context);
-	}
-
-	/**
-	 * Validates the checkStatusGOOD constraint of '<em>KPI Measurement Device</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateKPIMeasurementDevice_checkStatusGOOD(KPIMeasurementDevice kpiMeasurementDevice,
-			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return kpiMeasurementDevice.checkStatusGOOD(diagnostics, context);
 	}
 
 	/**

@@ -4,6 +4,21 @@ import java.util.Random;
 
 public class Util {
 	
+	public static String getStatus(double goal, double aggregatedValue) {
+		if (aggregatedValue < goal) {
+			return "GOOD";
+		}
+        double percentageDifference = Math.abs((goal - aggregatedValue) / goal) * 100;
+
+        if (percentageDifference <= 5) {
+            return "GOOD";
+        } else if (percentageDifference <= 25) {
+            return "WARN";
+        } else {
+            return "CRITICAL";
+        }
+    }
+	
 	private static Random random = new Random(233434);
 	
 	public static int randomInt() {
