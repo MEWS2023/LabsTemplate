@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/scml/src-gen" creationIcons="false" editDirectory="/scml.edit/src-gen"
+    editorDirectory="/scml.editor/src-gen" modelPluginID="scml" modelName="Scml" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>scml.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Scml" disposableProviderFactory="true" ecorePackage="scml.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="scml.ecore#//Status">
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//Status/GOOD"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//Status/WARN"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//Status/CRITICAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="scml.ecore#//PrincipleType">
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//PrincipleType/LAW"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//PrincipleType/STANDARD"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//PrincipleType/POLICY"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="scml.ecore#//DataType">
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//DataType/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//DataType/BOOL"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//DataType/INTEGER"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//DataType/FLOAT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="scml.ecore#//Operation">
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//Operation/SUM"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//Operation/DIFF"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//Operation/AVG"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//Operation/MIN"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//Operation/MAX"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="scml.ecore#//ParameterType">
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//ParameterType/AIRQUALITY"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//ParameterType/WEATHER"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//ParameterType/TRAFFIC"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//ParameterType/ENERGY"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//ParameterType/AGRICULTURAL"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//ParameterType/NAVIGATION"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//ParameterType/WASTEMANAGEMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="scml.ecore#//ParameterType/SAFETY"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="scml.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="scml.ecore#//KPIMeasurementDevice">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//KPIMeasurementDevice/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//KPIMeasurementDevice/lastCalculation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//KPIMeasurementDevice/nextCalculation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference scml.ecore#//KPIMeasurementDevice/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="scml.ecore#//Basis">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//Basis/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//Basis/principleType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//Basis/source"/>
+    </genClasses>
+    <genClasses ecoreClass="scml.ecore#//GoalReferenceValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scml.ecore#//GoalReferenceValue/basis"/>
+    </genClasses>
+    <genClasses ecoreClass="scml.ecore#//AggregatedValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//AggregatedValue/aggregator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//AggregatedValue/aggregatedTime"/>
+    </genClasses>
+    <genClasses ecoreClass="scml.ecore#//Data">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//Data/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//Data/value"/>
+    </genClasses>
+    <genClasses ecoreClass="scml.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//Parameter/unit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scml.ecore#//Parameter/goalreferencevalue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scml.ecore#//Parameter/observedValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference scml.ecore#//Parameter/component"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//Parameter/type"/>
+    </genClasses>
+    <genClasses ecoreClass="scml.ecore#//DataValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//DataValue/collected"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//DataValue/producedTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//DataValue/consumedTime"/>
+    </genClasses>
+    <genClasses ecoreClass="scml.ecore#//Project">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scml.ecore#//Project/component"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference scml.ecore#//Project/category"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scml.ecore#//Project/indicator"/>
+    </genClasses>
+    <genClasses ecoreClass="scml.ecore#//InfrastructureComponent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference scml.ecore#//InfrastructureComponent/isPartOf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference scml.ecore#//InfrastructureComponent/composedOf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scml.ecore#//InfrastructureComponent/location"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scml.ecore#//InfrastructureComponent/produces"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scml.ecore#//InfrastructureComponent/parameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scml.ecore#//InfrastructureComponent/device"/>
+    </genClasses>
+    <genClasses ecoreClass="scml.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//Location/Lat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//Location/Long"/>
+    </genClasses>
+    <genClasses ecoreClass="scml.ecore#//BuildingComponent"/>
+    <genClasses ecoreClass="scml.ecore#//TransportationComponent"/>
+    <genClasses ecoreClass="scml.ecore#//EnvironmentalComponent"/>
+    <genClasses ecoreClass="scml.ecore#//SmartCity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scml.ecore#//SmartCity/category"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scml.ecore#//SmartCity/project"/>
+    </genClasses>
+    <genClasses ecoreClass="scml.ecore#//Category">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//Category/SDG"/>
+    </genClasses>
+    <genClasses ecoreClass="scml.ecore#//Sensor"/>
+    <genClasses ecoreClass="scml.ecore#//Actuator"/>
+    <genClasses ecoreClass="scml.ecore#//Device">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scml.ecore#//Device/type"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
